@@ -34,6 +34,29 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # -----------
 
+# You can add custom software and dependencies for your environment here. Some examples:
+
+# RUN code-server --install-extension esbenp.prettier-vscode
+# RUN sudo apt-get install -y build-essential
+# RUN COPY myTool /home/coder/myTool
+
+# Install NodeJS
+RUN sudo curl -fsSL https://deb.nodesource.com/setup_15.x | sudo bash -
+RUN sudo apt-get install -y nodejs
+
+# Install LiveServer
+RUN code-server --install-extension ritwickdey.LiveServer
+# Install Python tooling
+RUN code-server --install-extension ms-python.python
+# Install Vetur tooling
+RUN code-server --install-extension octref.vetur
+# Install de
+RUN code-server --install-extension MS-CEINTL.vscode-language-pack-de
+# Install Todo Highlight
+RUN code-server --install-extension wayou.vscode-todo-highlight
+# Install Tailwind Tooling
+RUN code-server --install-extension bradlc.vscode-tailwindcss
+
 # Port
 ENV PORT=8080
 
